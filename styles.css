@@ -1,0 +1,84 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/gradient-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: grid;       
+    place-items: center;
+    /* sare child ko center mein place krne ke liye humne grid use kiya hai 
+    we can do this task using flex also 
+    display:flex, justify-content:center, align items:center
+    */
+}
+.game-info{
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 0.5rem 3rem;
+    border-radius: 1rem;
+    color: white;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(255,255,255,0.15);
+}
+.tic-tac-toe{
+    width: 90%;
+    max-width: 20rem; /*badi screen mein max-width le rha hai , choti screen mein 90% le rha hai */
+    background-color:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: grid;  /*so that we can create 3 columns */
+    grid-template-columns: repeat(3,1fr);
+    aspect-ratio: 1/1;
+}
+.box{
+    cursor: pointer;
+    position: relative;
+    width: 100%;  /*jitni bhi width alot hui hai 1fr se sari leni hai */
+    aspect-ratio: 1/1;
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box1,.box2,.box4,.box5{
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.box3,.box6{
+    border-bottom: 2px solid white;
+}
+.box7,.box8{
+    border-right: 2px solid white;
+}
+.btn{
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translate(-50%);
+    background-color:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius: 1rem;
+    padding: 0.5rem 2rem;
+    display: none;
+}
+.btn.active{
+    display: flex;
+}
+.win{
+    background-color: rgba(0,255,0,0.3);
+}
